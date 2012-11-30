@@ -9,5 +9,5 @@
 	<classpathentry kind="lib" path="libs/lombok.jar"/>
 	<classpathentry kind="lib" path="libs/log4j-1.2.13.jar"/>
 	<classpathentry kind="lib" path="libs/flexjson-2.1.jar"/>
-	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
