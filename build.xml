@@ -42,10 +42,12 @@
 	<target name="jar" depends="compile">
 		<delete dir="${bin.dir}/jar"/>
 		<mkdir dir="${bin.dir}/jar"/>
-		<jar destfile="${bin.dir}/jar/push4j-client.${version}.jar"
-				basedir="${classes.dir}">
-			<excludesfile name="log4j.properties"/>
-			<zipgroupfileset dir="${lib.dir}" includes="socketio.jar"/>
+		<jar destfile="${bin.dir}/jar/push4j-client.${version}.jar">
+			<fileset dir="${classes.dir}">
+				<include name="**/*.class"/>
+				<exclude name="**/*.properties"/>
+			</fileset>
+			<zipgroupfileset dir="${lib.dir}" includes="socketio.jar" />
 			<manifest></manifest>
 		</jar>
 	</target>
