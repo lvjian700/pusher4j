@@ -23,8 +23,8 @@ public class Pusher {
 	private final static String PUSHER_EVENT = "push";
 	
 	/**
-	 * 构造Pusher, 采用默认的DefauotPusherListener
-	 * {@link DefaultPusherListener}
+	 * 构造Pusher, 采用默认的{@link DefaultPusherListener}
+	 * 
 	 * @param url node-pusher 服务器地址, e.g: http://localhost:3000/
 	 */
 	public Pusher(String url) {
@@ -41,8 +41,8 @@ public class Pusher {
 	}
 	
 	/**
-	 * 执行IOCallback
-	 * @param url {@link #Pusher(String)}
+	 * 执行IOCallback {@link #Pusher(String)}
+	 * @param url node-pusher 服务器地址, e.g: http://localhost:3000/
 	 * @param callbackListner {@link DeDefaultPusherListener} 
 	 */
 	public Pusher(String url, IOCallback callbackListner) {
