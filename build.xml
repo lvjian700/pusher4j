@@ -8,6 +8,7 @@
 	<property name="lib.dir" value="libs" />
 	<property name="doc.dir" value="doc" />
 	<property name="classes.dir" value="${bin.dir}/classes" />
+	<property name="version" value="0.1.0" />
 
 
 	<!-- 定义classpath -->
@@ -16,7 +17,7 @@
 	</path>
 
 	<!-- 创建构建目录，用于存放构建生成的文件 -->
-	<target name="init">
+	<target name="init" depends="clean">
 		<mkdir dir="${bin.dir}"/>
 	</target>
 
@@ -39,11 +40,13 @@
 
 
 	<target name="jar" depends="compile">
-		<mkdir dir="jar"/>
-		<jar destfile="jar/socketio.jar" basedir="bin">
-			<zipgroupfileset dir="libs/" includes="socket.io.jar"/>
-			<manifest>
-			</manifest>
+		<delete dir="${bin.dir}/jar"/>
+		<mkdir dir="${bin.dir}/jar"/>
+		<jar destfile="${bin.dir}/jar/push4j-client.${version}.jar"
+				basedir="${classes.dir}">
+			
+			<zipgroupfileset dir="${lib.dir}" includes="socketio.jar"/>
+			<manifest></manifest>
 		</jar>
 	</target>
 
