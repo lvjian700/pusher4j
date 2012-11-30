@@ -10,6 +10,8 @@ import org.json.JSONObject;
 import com.dayang.pusher4j.listener.DefaultPusherListener;
 
 /**
+ * Push Server Java客户端，提供消息发送功能。<br />
+ * Pusher 之需要创建一个实例即可。
  * 
  * @author lvjian
  *
@@ -41,7 +43,7 @@ public class Pusher {
 	/**
 	 * 执行IOCallback
 	 * @param url {@link #Pusher(String)}
-	 * @param callbackListner
+	 * @param callbackListner {@link DeDefaultPusherListener} 
 	 */
 	public Pusher(String url, IOCallback callbackListner) {
 		try {
@@ -58,11 +60,11 @@ public class Pusher {
 	}
 	
 	/**
-	 * 
-	 * @param to
-	 * @param event
-	 * @param json
-	 * @return
+	 * 发送消息
+	 * @param to 以"/"开头的字符串， 只定发送到什么room. 浏览器段会用  sub(to); 来订阅room
+	 * @param event 消息的事件， 客户端会用 on(event, function() {}); 来监听
+	 * @param json 消息体， json 格式的字符串。
+	 * @return {@link Pusher} 可以支持连坠。 pusher.pub(...).pub(...);
 	 */
 	public Pusher pub(String to, String event, String json) {
 		PusherMessage message = new PusherMessage();

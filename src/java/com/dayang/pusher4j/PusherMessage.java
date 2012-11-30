@@ -1,10 +1,16 @@
 package com.dayang.pusher4j;
 
+/**
+ * 内部消息封装
+ * @author lvjian
+ *
+ */
 public class PusherMessage {
 	
 	private String to = null;
 	private String event = null;	
 	
+	/** json 格式的 string */
 	private String body = null;
 	
 	public PusherMessage() {
