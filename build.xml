@@ -17,7 +17,7 @@
 	</path>
 
 	<!-- 创建构建目录，用于存放构建生成的文件 -->
-	<target name="init" depends="clean">
+	<target name="init">
 		<mkdir dir="${bin.dir}"/>
 	</target>
 
@@ -44,7 +44,7 @@
 		<mkdir dir="${bin.dir}/jar"/>
 		<jar destfile="${bin.dir}/jar/push4j-client.${version}.jar"
 				basedir="${classes.dir}">
-			
+			<excludesfile name="log4j.properties"/>
 			<zipgroupfileset dir="${lib.dir}" includes="socketio.jar"/>
 			<manifest></manifest>
 		</jar>
@@ -52,6 +52,7 @@
 
 	<target name="doc" depends="compile">
 		<javadoc sourcepath="${src.dir}" destdir="${doc.dir}" encoding="UTF-8" docencoding="UTF-8">
+			<excludepackage name="com.dayang.pusher4j.sample"/>
 			<classpath refid="classpath"></classpath>
 		</javadoc>
 	</target>
