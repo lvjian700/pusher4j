@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<project name="uploadfile" default="compile" basedir=".">
+<project name="pusher4j" default="compile" basedir=".">
 	<property name="src.dir" value="src/java" />
 	<property name="test.dir" value="src/test" />
 	<property name="res.dir" value="src/resources" />
